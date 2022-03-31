@@ -119,4 +119,4 @@ def benchmark_robot(runs):
 
 
 if __name__ == '__main__':
-    benchmark_robot(10000)
+    benchmark_robot(10)
