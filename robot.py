@@ -103,7 +103,6 @@ def benchmark_robot(runs):
         M = compute_M(m,  n)
         value_optimal = accm(m - 1, n - 1, M, m, n)
         value_greedy = glouton_robot(m - 1, n - 1, M, m, n)
-
         values_optimal.append(value_optimal)
         values_greedy.append(value_greedy)
         relative_distance.append((value_greedy - value_optimal) / value_optimal)
@@ -119,4 +118,4 @@ def benchmark_robot(runs):
 
 
 if __name__ == '__main__':
-    benchmark_robot(10)
+    benchmark_robot(20000)

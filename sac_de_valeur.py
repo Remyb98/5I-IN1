@@ -34,8 +34,6 @@ def get_max_bag_glout(M, V, E, k, c):
             weight += e
             #bag.append(([i, tuples_v_e[i][0], tuples_v_e[i][1]]))
             bag.append(tuples_v_e[i][0])
-    for line in bag:
-        print(line)
     return sum(bag)
 
 def get_max_bag_opti(M, V, E, n, C):
@@ -55,9 +53,9 @@ def get_max_bag_opti_auxi(M, V, E, k, c, bag):  # affichage du contenu du sac de
         #bag.append([k - 1, V[k - 1], E[k - 1]])
         bag.append(V[k - 1])
         return get_max_bag_opti_auxi(M, V, E, k - 1, c - E[k - 1], bag)  # afficher le sac "k-1,c-e(k-1)"
-        print(k - 1, end="\t")
-        print(V[k - 1], end="\t")
-        print(E[k - 1])  # afficher le k-Ã¨me objet
+        #print(k - 1, end="\t")
+        #print(V[k - 1], end="\t")
+        #print(E[k - 1])  # afficher le k-Ã¨me objet
 
 
 
@@ -107,10 +105,7 @@ def benchmark_bag(runs):
     print(f"Optimal:\n\tmean:{mean_optimal}\n\tstd:{std_optimal}")
     plt.hist(relative_distance, bins='auto')
     plt.show()
-    print(bag_glout)
-    print(bag_opti)
-    print("ok")
 
 
 if __name__ == """__main__""":
-    benchmark_bag(2000)
+    benchmark_bag(20000)
